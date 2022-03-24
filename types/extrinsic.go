@@ -145,6 +145,7 @@ func (e *Extrinsic) Sign(signer signature.KeyringPair, o SignatureOptions) error
 			GenesisHash: o.GenesisHash,
 			BlockHash:   o.BlockHash,
 		},
+		AppID:              o.AppID,
 		TransactionVersion: o.TransactionVersion,
 	}
 
@@ -161,6 +162,7 @@ func (e *Extrinsic) Sign(signer signature.KeyringPair, o SignatureOptions) error
 		Era:       era,
 		Nonce:     o.Nonce,
 		Tip:       o.Tip,
+		AppID:     o.AppID,
 	}
 
 	e.Signature = extSig
